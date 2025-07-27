@@ -1,0 +1,157 @@
+/* CSS Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px; /* Base font size for rem calculations */
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Ensure images are responsive */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Touch-friendly interactive elements */
+button,
+a,
+[role='button'] {
+  min-height: 44px; /* iOS recommended touch target size */
+  min-width: 44px;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+a:focus,
+[tabindex]:focus {
+  outline-offset: 2px;
+}
+
+/* Media Queries for Enhanced Responsiveness */
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 35.99em) {
+  html {
+    font-size: 14px;
+  }
+
+  /* Ensure proper spacing on very small screens */
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 36em) {
+  html {
+    font-size: 15px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 48em) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 62em) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 75em) {
+  html {
+    font-size: 17px;
+  }
+}
+
+/* Ultra-wide devices (1400px and up) */
+@media (min-width: 87.5em) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Optimize for retina displays */
+  body {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Dark mode support (future enhancement) */
+@media (prefers-color-scheme: dark) {
+  /* Dark mode styles can be added here */
+}
+
+/* Print styles */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  /* Hide navigation and non-essential elements */
+  nav,
+  footer,
+  button {
+    display: none !important;
+  }
+}
+
+/* Landscape orientation adjustments for mobile */
+@media (max-width: 48em) and (orientation: landscape) {
+  /* Reduce vertical padding in landscape mode */
+  section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+
+/* Container queries support (progressive enhancement) */
+@supports (container-type: inline-size) {
+  .responsive-container {
+    container-type: inline-size;
+  }
+}
