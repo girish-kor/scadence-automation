@@ -1,5 +1,6 @@
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import scadanceLogo from '../assets/scadance-logo.png'
 import useResponsive from '../hooks/useResponsive'
 import useScrollPosition from '../hooks/useScrollPosition'
 import theme from '../styles/theme'
@@ -38,27 +39,6 @@ const Navbar = () => {
     alignItems: 'center',
     gap: '0.75rem',
     flex: 1, // Allow logo to flex on mobile
-  }
-
-  const logoIconStyles = {
-    width: '2.5rem', // Mobile size
-    height: '2.5rem',
-    background: theme.teal,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: theme.white,
-    fontSize: '1.25rem',
-    fontWeight: 'bold',
-  }
-
-  const logoTextStyles = {
-    fontSize: isMobile ? '1rem' : '1.25rem', // Responsive font size
-    fontWeight: '700',
-    color: theme.gray900,
-    whiteSpace: 'nowrap',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
   }
 
   // Desktop navigation menu
@@ -100,13 +80,13 @@ const Navbar = () => {
         <div style={containerStyles}>
           {/* Logo Section */}
           <div style={logoStyles}>
-            <div style={logoIconStyles}>S</div>
-            <span style={logoTextStyles}>
-              {isMobile ? 'Scadence' : 'Scadence Automation'}
-            </span>
+            <img
+              src={scadanceLogo}
+              alt='Scadence Automation'
+              style={{ height: '3rem' }}
+            />
           </div>
 
-          {/* Desktop Navigation */}
           <div style={desktopMenuStyles}>
             {['Home', 'Services', 'About', 'Contact'].map(item => (
               <a
@@ -127,7 +107,6 @@ const Navbar = () => {
               </a>
             ))}
           </div>
-
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
