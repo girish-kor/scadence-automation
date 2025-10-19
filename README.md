@@ -1,9 +1,5 @@
 # Scadence Automation — Project Description
 
-This file provides a concise description of the frontend project and a file-by-file summary. It was created because the repository's existing `README.md` could not be opened for editing.
-
-## Overview
-
 This is a small responsive React frontend built with Vite. It demonstrates a marketing-style landing page for a fictional company "Scadence Automation" that provides industrial automation services (marine, oil & gas, pharma, panel manufacturing, VFD retrofitting, and IoT/cloud integration).
 
 Key technologies
