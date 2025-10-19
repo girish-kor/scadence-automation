@@ -1,52 +1,52 @@
-import useResponsive from '../hooks/useResponsive'
-import theme from '../styles/theme'
+import useResponsive from '../hooks/useResponsive';
+import theme from '../styles/theme';
 
 const About = () => {
-  const { isMobile, isTablet } = useResponsive()
+  const { isMobile, isTablet } = useResponsive();
 
   const sectionStyles = {
     background: theme.gray50,
     padding: 'clamp(3rem, 8vh, 5rem) 1rem',
-  }
+  };
 
   const containerStyles = {
     maxWidth: '75rem',
     margin: '0 auto',
-  }
+  };
 
   const gridStyles = {
     display: 'grid',
     gridTemplateColumns: isMobile || isTablet ? '1fr' : '1fr 1fr',
     gap: 'clamp(2rem, 5vw, 3.75rem)',
     alignItems: 'center',
-  }
+  };
 
   const headingStyles = {
     fontSize: 'clamp(2rem, 6vw, 3rem)',
     fontWeight: '700',
     color: theme.gray900,
     marginBottom: 'clamp(1rem, 3vw, 1.5rem)',
-  }
+  };
 
   const paragraphStyles = {
     fontSize: 'clamp(1rem, 2.5vw, 1.125rem)',
     color: theme.gray600,
     lineHeight: '1.7',
     marginBottom: 'clamp(1.5rem, 4vw, 2rem)',
-  }
+  };
 
   const capabilitiesGridStyles = {
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fit, minmax(12rem, 1fr))',
     gap: '1rem',
     marginBottom: 'clamp(1.5rem, 4vw, 2.5rem)',
-  }
+  };
 
   const statsContainerStyles = {
     display: 'flex',
     gap: 'clamp(1.5rem, 5vw, 2.5rem)',
     justifyContent: isMobile ? 'space-around' : 'flex-start',
-  }
+  };
 
   const illustrationStyles = {
     height: 'clamp(15rem, 40vw, 25rem)',
@@ -56,49 +56,46 @@ const About = () => {
     justifyContent: 'center',
     position: 'relative',
     order: isMobile || isTablet ? -1 : 0, // Show illustration first on mobile
-  }
+  };
 
   return (
-    <section style={sectionStyles}>
+    <section id="about" style={sectionStyles}>
       <div style={containerStyles}>
         <div style={gridStyles}>
           <div>
             <h2 style={headingStyles}>About Scadence</h2>
 
             <p style={paragraphStyles}>
-              We deliver robust, smart, and scalable automation solutions across
-              key industrial sectors.Our expertise spans VFD retrofitting,
-              IoT-based monitoring, and cloud integration.
+              We deliver robust, smart, and scalable automation solutions across key industrial
+              sectors.Our expertise spans VFD retrofitting, IoT-based monitoring, and cloud
+              integration.
             </p>
 
             <div style={capabilitiesGridStyles}>
-              {[
-                'PLC/HMI/SCADA',
-                'IoT Integration',
-                'Cloud Analytics',
-                'Energy Optimization',
-              ].map(item => (
-                <div
-                  key={item}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.75rem',
-                    fontSize: 'clamp(0.875rem, 2vw, 1rem)',
-                    color: theme.gray900,
-                  }}
-                >
+              {['PLC/HMI/SCADA', 'IoT Integration', 'Cloud Analytics', 'Energy Optimization'].map(
+                (item) => (
                   <div
+                    key={item}
                     style={{
-                      width: '0.5rem',
-                      height: '0.5rem',
-                      background: theme.teal,
-                      flexShrink: 0,
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.75rem',
+                      fontSize: 'clamp(0.875rem, 2vw, 1rem)',
+                      color: theme.gray900,
                     }}
-                  />
-                  {item}
-                </div>
-              ))}
+                  >
+                    <div
+                      style={{
+                        width: '0.5rem',
+                        height: '0.5rem',
+                        background: theme.teal,
+                        flexShrink: 0,
+                      }}
+                    />
+                    {item}
+                  </div>
+                )
+              )}
             </div>
 
             <div style={statsContainerStyles}>
@@ -182,7 +179,7 @@ const About = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default About
+export default About;
